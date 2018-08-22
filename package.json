@@ -2,7 +2,7 @@
   "name": "js-utils",
   "version": "1.0.0",
   "description": "Javascript utilities that you can use in your day-to-day development",
-  "main": "dist/index.js",
+  "main": "dist/js-utils.js",
   "repository": "https://github.com/gusbueno/js-utils.git",
   "author": "Gustavo Bueno <gustavo.bueno89@gmail.com>",
   "license": "MIT",
@@ -16,12 +16,11 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.2",
-    "flow-bin": "^0.79.1",
-    "flow-webpack-plugin": "^1.2.0",
     "mocha": "^5.2.0",
-    "standard": "^11.0.1",
     "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-node-externals": "^1.7.2"
   }
 }
