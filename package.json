@@ -1,6 +1,6 @@
 {
   "name": "@gusbueno/js-utils",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Javascript utilities that you can use in your day-to-day development",
   "main": "dist/index.js",
   "repository": "https://github.com/gusbueno/js-utils.git",
