@@ -2,7 +2,7 @@
   "name": "@gusbueno/js-utils",
   "version": "1.0.0",
   "description": "Javascript utilities that you can use in your day-to-day development",
-  "main": "dist/js-utils.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/gusbueno/js-utils.git",
   "author": "Gustavo Bueno <gustavo.bueno89@gmail.com>",
   "license": "MIT",
