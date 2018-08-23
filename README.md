@@ -9,7 +9,7 @@ This function will help you to convert an array of objects to one object(key/val
 
 Example:
 ```js
-import { arrayToObject } from 'js-utils'
+import { arrayToObject } from '@gusbueno/js-utils'
 
 const data = [
   {
@@ -43,7 +43,7 @@ This function will help you to handle errors from **async/await** operator.
 Example:
 ```js
 import axios from 'axios'
-import { to } from '../dist'
+import { to } from '@gusbueno/js-utils'
 
 const getUsers = async () => {
   const [err, data] = await to(axios.get('http://host.com/api/users'))
