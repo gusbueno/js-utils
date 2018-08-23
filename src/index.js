@@ -1,8 +1,10 @@
 import arrayToObject from './arrayToObject'
+import to from './awaitTo'
 
 export {
-  arrayToObject
+  arrayToObject,
+  to
 }
 
-const JSUtils = { arrayToObject }
+const JSUtils = { arrayToObject, to }
 export { JSUtils as default }
