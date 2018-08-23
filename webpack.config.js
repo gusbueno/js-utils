@@ -1,11 +1,17 @@
 const path = require('path')
-const FlowWebpackPlugin = require('flow-webpack-plugin')
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/index.js'),
+  entry: path.resolve(__dirname, 'src/index'),
   output: {
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js',
+    library: 'JSUtils',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
+  target: 'node',
+  externals: [nodeExternals()],
   module: {
     rules: [
       {
@@ -14,8 +20,5 @@ module.exports = {
         loader: 'babel-loader'
       }
     ]
-  },
-  plugins: [
-    new FlowWebpackPlugin()
-  ]
+  }
 }
