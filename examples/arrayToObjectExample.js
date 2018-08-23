@@ -1,4 +1,4 @@
-const utils = require('../dist')
+import { arrayToObject } from '../dist'
 
 const data = [
   {
@@ -10,6 +10,17 @@ const data = [
   }
 ]
 
-const objectData = utils.arrayToObject(data, 'name')
+const objectData = arrayToObject(data, 'name')
 
-console.log(objectData)
+/* RESULT
+{
+  BTC: {
+    name: 'BTC',
+    value: 6000
+  },
+  XRP: {
+    name: 'XRP',
+    value: 0.34
+  }
+}
+ */
