@@ -1,13 +1,23 @@
-// @flow
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = exports.to = void 0;
 
 /**
  * promise: the request using async/await operator
  * 
  * it returns an  array
  */
+var to = function to(promise) {
+  return promise.then(function (data) {
+    return [null, data];
+  })["catch"](function (err) {
+    return [err];
+  });
+};
 
-export const to = (promise: Promise): Array<any> => {
-  return promise.then((data: any) => {
-    return [null, data]
-  }).catch(err => [err])
-}
+exports.to = to;
+var _default = to;
+exports["default"] = _default;

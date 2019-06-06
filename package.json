@@ -1,26 +1,55 @@
 {
   "name": "@gusbueno/js-utils",
   "version": "1.0.4",
-  "description": "Javascript utilities that you can use in your day-to-day development",
-  "main": "dist/index.js",
+  "description": "Javascript utilities that you can use in your day-to-day.",
+  "keywords": [
+    "javascript",
+    "utils",
+    "utilities",
+    "toolkit",
+    "algorithm"
+  ],
+  "main": "src/index",
+  "module": "es/index.js",
+  "unpkg": "dist/js-utils.min.js",
+  "files": [
+    "es",
+    "src",
+    "dist"
+  ],
   "repository": "https://github.com/gusbueno/js-utils.git",
   "author": "Gustavo Bueno <gustavo.bueno89@gmail.com>",
+  "contributors": [
+    {
+      "name": "Gustavo Bueno",
+      "email": "gustavo.bueno89@gmail.com",
+      "web": "https://github.com/gusbueno"
+    }
+  ],
+  "sideEffects": false,
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "webpack --mode development",
-    "build": "webpack --mode production"
+    "start": "",
+    "build:es": "cross-env BABEL_ENV=es babel source --out-dir es",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel source --out-dir src",
+    "build:mjs": "cross-env BABEL_ENV=es babel source/index.js --out-file src/index.mjs",
+    "build:umd": "cross-env NODE_ENV=development rollup -c -o dist/js-utils.js",
+    "build:umd:min": "cross-env NODE_ENV=production rollup -c -o dist/js-utils.min.js",
+    "build": "yarn build:es && yarn build:cjs && yarn build:umd && yarn build:umd:min && yarn build:mjs"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-flow": "^6.23.0",
-    "babel-preset-stage-2": "^6.24.1",
-    "chai": "^4.1.2",
-    "mocha": "^5.2.0",
-    "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0",
-    "webpack-node-externals": "^1.7.2"
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-flow": "^7.0.0",
+    "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
+    "flow-bin": "^0.100.0",
+    "flow-typed": "^2.5.2",
+    "mocha": "^6.1.4",
+    "rollup": "^1.14.2",
+    "rollup-plugin-flow": "^1.1.1",
+    "rollup-plugin-uglify": "^6.0.2"
   }
 }
