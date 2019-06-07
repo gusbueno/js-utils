@@ -36,7 +36,8 @@
     "build:mjs": "cross-env BABEL_ENV=es babel source/index.js --out-file src/index.mjs",
     "build:umd": "cross-env NODE_ENV=development rollup -c -o dist/js-utils.js",
     "build:umd:min": "cross-env NODE_ENV=production rollup -c -o dist/js-utils.min.js",
-    "build": "yarn build:es && yarn build:cjs && yarn build:umd && yarn build:umd:min && yarn build:mjs"
+    "build": "yarn build:es && yarn build:cjs && yarn build:umd && yarn build:umd:min && yarn build:mjs",
+    "build:clean": "rm -rf es && rm -rf src"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -45,11 +46,9 @@
     "@babel/preset-flow": "^7.0.0",
     "chai": "^4.2.0",
     "cross-env": "^5.2.0",
-    "flow-bin": "^0.100.0",
-    "flow-typed": "^2.5.2",
     "mocha": "^6.1.4",
     "rollup": "^1.14.2",
     "rollup-plugin-flow": "^1.1.1",
-    "rollup-plugin-uglify": "^6.0.2"
+    "rollup-plugin-terser": "^5.0.0"
   }
 }

@@ -1,4 +1,4 @@
-const uglify = require('rollup-plugin-uglify').uglify
+const terser = require('rollup-plugin-terser').terser
 const pkg = require('./package.json')
 const flow = require('rollup-plugin-flow')
 
@@ -22,14 +22,7 @@ const banner = '//  JS-Utils v' + pkg.version + '\n'
   
   if (process.env.NODE_ENV === 'production') {
     config.plugins.push(
-      uglify({
-        compress: {
-          pure_getters: true,
-          unsafe: true,
-          unsafe_comps: true,
-        },
-        warnings: false
-      })
+      terser()
     )
   }
   
