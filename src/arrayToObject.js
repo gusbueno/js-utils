@@ -1,4 +1,9 @@
-// @flow
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
 
 /**
  * data: list of item
@@ -6,12 +11,12 @@
  * 
  * it returns an object
  */
+var arrayToObject = function arrayToObject(data, key) {
+  return data.reduce(function (obj, item) {
+    obj[item[key]] = item;
+    return obj;
+  }, {});
+};
 
-const arrayToObject = (data: Array<any>, key: string): Object => {
-  return data.reduce((obj, item) => {
-    obj[item[key]] = item
-    return obj
-  }, {})
-}
-
-export default arrayToObject
+var _default = arrayToObject;
+exports["default"] = _default;
