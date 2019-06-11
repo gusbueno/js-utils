@@ -1,4 +1,4 @@
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![CircleCI](https://circleci.com/gh/gusbueno/js-utils/tree/master.svg?style=svg)](https://circleci.com/gh/gusbueno/js-utils/tree/master)
 
 
 # js-utils
