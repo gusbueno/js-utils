@@ -1,4 +1,4 @@
-//  JS-Utils v1.0.4
+//  JS-Utils v1.1.1
 //  https://github.com/gusbueno/js-utils
 //  (c) 2018-2019 Gustavo Bueno
 //  JS-Utils may be freely distributed under the MIT license.
