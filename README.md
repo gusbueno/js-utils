@@ -1,5 +1,6 @@
 [![CircleCI](https://circleci.com/gh/gusbueno/js-utils/tree/master.svg?style=svg)](https://circleci.com/gh/gusbueno/js-utils/tree/master)
-
+[![npm version](https://badge.fury.io/js/%40gusbueno%2Fjs-utils.svg)](https://badge.fury.io/js/%40gusbueno%2Fjs-utils)
+[![dependencies](https://david-dm.org/gusbueno/js-utils.svg)](https://david-dm.org/gusbueno/js-utils)
 
 # js-utils
 Javascript utilities that you can use in your day-to-day development

@@ -39,6 +39,7 @@
     "build:clean": "rm -rf es && rm -rf src",
     "test": "mocha --require @babel/register --require @babel/polyfill"
   },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
