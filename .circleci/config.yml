@@ -27,13 +27,61 @@ jobs:
             - v1-dependencies-
 
       - run: yarn install
+      
+      - run: yarn build
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
-      
-      - run: yarn build
+
+      - persist_to_workspace:
+          root: ~/js-utils
+          paths: .
+
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/js-utils
 
       # run tests!
       - run: yarn test
+  
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/js-utils/.npmrc
+      
+      - run:
+          name: Publish package
+          command: npm publish
+
+workflows:
+  version: 2
+  test-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - develop
+                - master
+      - test:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - develop
+                - master
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
