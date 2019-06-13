@@ -1,5 +1,4 @@
 const terser = require('rollup-plugin-terser').terser
-const typescript = require('rollup-plugin-typescript')
 
 const pkg = require('./package.json')
 
@@ -9,16 +8,14 @@ const banner = '//  JS-Utils v' + pkg.version + '\n'
   + '//  JS-Utils may be freely distributed under the MIT license.\n'
 
   const config = {
-    input: 'source/index.ts',
+    input: 'es/index.js',
     output: {
       format: 'umd',
       name: 'JSUtils',
       exports: 'named',
       banner: banner
     },
-    plugins: [
-      typescript()
-    ]
+    plugins: []
   }
   
   if (process.env.NODE_ENV === 'production') {
