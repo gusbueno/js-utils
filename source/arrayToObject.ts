@@ -1,5 +1,3 @@
-// @flow
-
 /**
  * data: list of item
  * key: name of the field that will be the key for each item in object generated

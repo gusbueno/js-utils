@@ -1,6 +1,7 @@
 const terser = require('rollup-plugin-terser').terser
+const typescript = require('rollup-plugin-typescript')
+
 const pkg = require('./package.json')
-const flow = require('rollup-plugin-flow')
 
 const banner = '//  JS-Utils v' + pkg.version + '\n'
   + '//  https://github.com/gusbueno/js-utils\n'
@@ -8,7 +9,7 @@ const banner = '//  JS-Utils v' + pkg.version + '\n'
   + '//  JS-Utils may be freely distributed under the MIT license.\n'
 
   const config = {
-    input: 'source/index.js',
+    input: 'source/index.ts',
     output: {
       format: 'umd',
       name: 'JSUtils',
@@ -16,7 +17,7 @@ const banner = '//  JS-Utils v' + pkg.version + '\n'
       banner: banner
     },
     plugins: [
-      flow()
+      typescript()
     ]
   }
   
