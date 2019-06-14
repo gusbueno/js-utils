@@ -57,5 +57,4 @@ typings/
 .vscode
 
 # builds
-/es
-/src
+es/
