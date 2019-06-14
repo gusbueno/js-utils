@@ -4,44 +4,27 @@
 //  JS-Utils may be freely distributed under the MIT license.
 
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (global = global || self, factory(global.JSUtils = {}));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+    (global = global || self, factory(global.JSUtils = {}));
 }(this, function (exports) { 'use strict';
 
-  //      
+    const arrayToObject = (data, key) => {
+        return data.reduce((obj, item) => {
+            obj[item[key]] = item;
+            return obj;
+        }, {});
+    };
 
-  /**
-   * data: list of item
-   * key: name of the field that will be the key for each item in object generated
-   * 
-   * it returns an object
-   */
+    const to = (promise) => {
+        return promise.then((data) => {
+            return [null, data];
+        }).catch((err) => [err]);
+    };
 
-  const arrayToObject = (data            , key        )         => {
-    return data.reduce((obj, item) => {
-      obj[item[key]] = item;
-      return obj
-    }, {})
-  };
+    exports.arrayToObject = arrayToObject;
+    exports.to = to;
 
-  //      
-
-  /**
-   * promise: the request using async/await operator
-   * 
-   * it returns an  array
-   */
-
-  const to = (promise         )             => {
-    return promise.then((data     ) => {
-      return [null, data]
-    }).catch(err => [err])
-  };
-
-  exports.arrayToObject = arrayToObject;
-  exports.to = to;
-
-  Object.defineProperty(exports, '__esModule', { value: true });
+    Object.defineProperty(exports, '__esModule', { value: true });
 
 }));

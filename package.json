@@ -12,10 +12,11 @@
   "main": "src/index",
   "module": "es/index.js",
   "unpkg": "dist/js-utils.min.js",
+  "typings": "typings/index.d.ts",
   "files": [
-    "es",
-    "src",
-    "dist"
+    "typings",
+    "dist",
+    "es"
   ],
   "repository": "https://github.com/gusbueno/js-utils.git",
   "author": "Gustavo Bueno <gustavo.bueno89@gmail.com>",
@@ -30,13 +31,11 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build:es": "cross-env BABEL_ENV=es babel source --out-dir es",
-    "build:cjs": "cross-env BABEL_ENV=cjs babel source --out-dir src",
-    "build:mjs": "cross-env BABEL_ENV=es babel source/index.js --out-file src/index.mjs",
+    "build:ts": "tsc",
     "build:umd": "cross-env NODE_ENV=development rollup -c -o dist/js-utils.js",
     "build:umd:min": "cross-env NODE_ENV=production rollup -c -o dist/js-utils.min.js",
-    "build": "yarn build:es && yarn build:cjs && yarn build:umd && yarn build:umd:min && yarn build:mjs",
-    "build:clean": "rm -rf es && rm -rf src",
+    "build": "yarn build:ts && yarn build:umd && yarn build:umd:min",
+    "build:clean": "rm -rf es && rm -rf dist rm -rf typings",
     "test": "mocha --require @babel/register --require @babel/polyfill"
   },
   "dependencies": {},
@@ -45,13 +44,12 @@
     "@babel/core": "^7.4.5",
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
-    "@babel/preset-flow": "^7.0.0",
     "@babel/register": "^7.4.4",
     "chai": "^4.2.0",
     "cross-env": "^5.2.0",
     "mocha": "^6.1.4",
     "rollup": "^1.14.2",
-    "rollup-plugin-flow": "^1.1.1",
-    "rollup-plugin-terser": "^5.0.0"
+    "rollup-plugin-terser": "^5.0.0",
+    "typescript": "^3.5.2"
   }
 }
