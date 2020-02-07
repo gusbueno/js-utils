@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { to } from '../dist/js-utils'
+import { to } from '../lib/awaitTo'
 
 describe('awaitTo function', () => {
   it('should return data when promise is resolved', async () => {

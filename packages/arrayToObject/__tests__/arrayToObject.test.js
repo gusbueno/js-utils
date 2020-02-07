@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { arrayToObject } from '../dist/js-utils'
+import { arrayToObject } from '../lib/arrayToObject'
 
 describe('arrayToObject function', () => {
   it('should return an object with the name prop as key', () => {

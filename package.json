@@ -13,20 +13,8 @@
   "module": "es/index.js",
   "unpkg": "dist/js-utils.min.js",
   "typings": "typings/index.d.ts",
-  "files": [
-    "typings",
-    "dist",
-    "es"
-  ],
   "repository": "https://github.com/gusbueno/js-utils.git",
   "author": "Gustavo Bueno <gustavo.bueno89@gmail.com>",
-  "contributors": [
-    {
-      "name": "Gustavo Bueno",
-      "email": "gustavo.bueno89@gmail.com",
-      "web": "https://github.com/gusbueno"
-    }
-  ],
   "sideEffects": false,
   "license": "MIT",
   "private": false,
@@ -38,18 +26,12 @@
     "build:clean": "rm -rf es && rm -rf dist rm -rf typings",
     "test": "mocha --require @babel/register --require @babel/polyfill"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/polyfill": "^7.4.4",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/register": "^7.4.4",
     "chai": "^4.2.0",
     "cross-env": "^5.2.0",
+    "lerna": "^3.20.2",
     "mocha": "^6.1.4",
     "rollup": "^1.14.2",
-    "rollup-plugin-terser": "^5.0.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.7.5"
   }
 }
